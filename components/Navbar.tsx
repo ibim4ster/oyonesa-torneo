@@ -15,22 +15,24 @@ export const Navbar: React.FC = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-xl py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <img 
-            src="/oyonesa.png" 
-            alt="Logo S.D. Oyonesa" 
-            className="w-12 h-12 md:w-14 md:h-14 object-contain"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              if (!target.dataset.tried) {
-                target.dataset.tried = "1";
-                target.src = "oyonesa.png"; // Intento 2: ruta relativa
-              } else if (target.dataset.tried === "1") {
-                target.dataset.tried = "2";
-                // Intento 3: URL oficial externa de la Oyonesa como respaldo real
-                target.src = "https://upload.wikimedia.org/wikipedia/en/2/23/SD_Oyonesa_logo.png";
-              }
-            }}
-          />
+          <div className="bg-white p-1 rounded-xl shadow-lg flex items-center justify-center">
+            <img 
+              src="https://api.clupik.com/clubs/27212/images/navbar.png" 
+              alt="Logo S.D. Oyonesa" 
+              className="w-10 h-10 md:w-12 md:h-12 object-contain"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                if (!target.dataset.tried) {
+                  target.dataset.tried = "1";
+                  target.src = "/oyonesa.png"; // Intento 2: ruta local
+                } else if (target.dataset.tried === "1") {
+                  target.dataset.tried = "2";
+                  // Intento 3: Respaldo oficial externo
+                  target.src = "https://upload.wikimedia.org/wikipedia/en/2/23/SD_Oyonesa_logo.png";
+                }
+              }}
+            />
+          </div>
           <div className="flex flex-col">
             <span className="font-sport text-lg md:text-xl tracking-wider text-white leading-none">II MEMORIAL</span>
             <span className="font-sport text-xl md:text-2xl tracking-wider text-emerald-400 leading-none">GONZALO GÓMEZ</span>

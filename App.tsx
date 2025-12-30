@@ -6,6 +6,7 @@ import { InfoSection } from './components/InfoSection';
 import { Downloads } from './components/Downloads';
 import { Assistant } from './components/Assistant';
 
+// Actualización del torneo: Nuevos horarios y PDFs subidos al repositorio
 const Footer: React.FC = () => (
   <footer className="py-20 bg-slate-950 border-t border-slate-900">
     <div className="container mx-auto px-6 text-center">

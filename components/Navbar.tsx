@@ -16,9 +16,9 @@ export const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <img 
-            src="https://images.unsplash.com/photo-1599305090598-fe179d501227?w=100&h=100&fit=crop&q=80" 
+            src="./oyonesa.png" 
             alt="Logo S.D. Oyonesa" 
-            className="w-10 h-10 md:w-12 md:h-12 object-contain brightness-0 invert"
+            className="w-12 h-12 md:w-14 md:h-14 object-contain"
           />
           <div className="flex flex-col">
             <span className="font-sport text-lg md:text-xl tracking-wider text-white leading-none">II MEMORIAL</span>

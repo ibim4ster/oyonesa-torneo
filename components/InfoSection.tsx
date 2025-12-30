@@ -10,7 +10,7 @@ export const InfoSection: React.FC = () => {
             <div className="absolute -inset-4 bg-emerald-500/20 rounded-3xl blur-3xl transition-all group-hover:bg-emerald-500/30"></div>
             <div className="relative rounded-[2.5rem] overflow-hidden border border-slate-700 shadow-2xl bg-slate-800">
               <img 
-                src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200&auto=format&fit=crop" 
+                src="./IMG_2874.jpg" 
                 alt="Instalaciones Oion ARENA" 
                 className="w-full h-[500px] object-cover transition-transform duration-[3s] group-hover:scale-110"
               />

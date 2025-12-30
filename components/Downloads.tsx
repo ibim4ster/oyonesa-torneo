@@ -34,7 +34,7 @@ export const Downloads: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
                   </svg>
                 </div>
-                <span className="text-slate-600 font-bold text-[10px] tracking-widest mt-2 uppercase">PDF • 1.2 MB</span>
+                <span className="text-slate-600 font-bold text-[10px] tracking-widest mt-2 uppercase">PDF Oficial</span>
               </div>
               
               <h3 className="text-3xl font-black text-white mb-1 tracking-tight">{cat.year}</h3>
@@ -47,9 +47,10 @@ export const Downloads: React.FC = () => {
               <a 
                 href={cat.pdfUrl}
                 className="w-full py-4 bg-white/5 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group/btn border border-white/10 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/20"
-                download
+                download={`${cat.year}-Memorial-Gonzalo-Gomez.pdf`}
+                type="application/pdf"
               >
-                DESCARGAR
+                DESCARGAR PDF
                 <svg className="w-5 h-5 group-hover/btn:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
                 </svg>
@@ -60,7 +61,7 @@ export const Downloads: React.FC = () => {
 
         <div className="mt-20 p-8 rounded-3xl bg-emerald-500/5 border border-emerald-500/10 max-w-3xl mx-auto">
           <p className="text-slate-400 text-sm">
-            ¿No encuentras lo que buscas? El asistente virtual puede ayudarte con dudas rápidas o puedes escribirnos a <span className="text-emerald-400 font-bold">torneo@oyonesa.com</span>
+            Si el archivo se descarga como .txt, asegúrate de que los archivos <span className="text-white font-mono">2012.pdf, 2013.pdf, etc.</span> han sido subidos correctamente al servidor.
           </p>
         </div>
       </div>

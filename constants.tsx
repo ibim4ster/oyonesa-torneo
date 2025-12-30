@@ -6,30 +6,30 @@ export const CATEGORIES: CategoryInfo[] = [
   {
     year: "2012",
     label: "Alevín Segundo Año",
-    pdfUrl: "/2012.pdf",
+    pdfUrl: "./2012.pdf",
     color: "bg-blue-600",
-    description: "Competencia de alto nivel para nacidos en 2012. Fútbol 8 competitivo."
+    description: "Cuadrante de competición y reglamento para nacidos en 2012. Fútbol 8 formativo."
   },
   {
     year: "2013",
     label: "Alevín Primer Año",
-    pdfUrl: "/2013.pdf",
+    pdfUrl: "./2013.pdf",
     color: "bg-emerald-600",
-    description: "Talento en estado puro. La transición al fútbol competitivo de alto rendimiento."
+    description: "Calendario de partidos y bases técnicas para la generación de 2013."
   },
   {
     year: "2014",
     label: "Benjamín Segundo Año",
-    pdfUrl: "/2014.pdf",
+    pdfUrl: "./2014.pdf",
     color: "bg-amber-600",
-    description: "Velocidad y técnica individual para los nacidos en 2014."
+    description: "Horarios de juego y normativa específica para benjamines de segundo año."
   },
   {
     year: "2015",
     label: "Benjamín Primer Año",
-    pdfUrl: "/2015.pdf",
+    pdfUrl: "./2015.pdf",
     color: "bg-rose-600",
-    description: "Habilidades fundamentales y espíritu de equipo en el Memorial."
+    description: "Guía de bienvenida y calendario de competición para los más pequeños."
   }
 ];
 

@@ -1,7 +1,7 @@
 
 import { CategoryInfo, NavItem } from './types';
 
-// Versión del proyecto: 1.0.2 - Actualización de archivos PDF y rutas
+// Versión del proyecto: 1.0.3 - Ajuste de imagen Oion Arena e imagen local
 export const CATEGORIES: CategoryInfo[] = [
   {
     year: "2014",

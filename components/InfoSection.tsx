@@ -10,20 +10,17 @@ export const InfoSection: React.FC = () => {
             <div className="absolute -inset-4 bg-emerald-500/20 rounded-3xl blur-3xl transition-all group-hover:bg-emerald-500/30"></div>
             <div className="relative rounded-[2.5rem] overflow-hidden border border-slate-700 shadow-2xl bg-slate-800">
               <img 
-                src="/IMG_2874.jpg" 
+                src="IMG_2874.jpg" 
                 alt="Instalaciones Oion ARENA" 
                 className="w-full h-[500px] object-cover transition-transform duration-[3s] group-hover:scale-110"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  if (!target.dataset.step) {
-                    target.dataset.step = "1";
-                    target.src = "IMG_2874.jpg"; // Sin barra
-                  } else if (target.dataset.step === "1") {
-                    target.dataset.step = "2";
-                    target.src = "img_2874.jpg"; // Todo minúsculas
-                  } else if (target.dataset.step === "2") {
-                    target.dataset.step = "3";
-                    target.src = "https://images.unsplash.com/photo-1529900667825-0a8a1c3f0ad0?q=80&w=1200"; // Fallback futbolero
+                  if (!target.dataset.triedLocal) {
+                    target.dataset.triedLocal = "1";
+                    target.src = "./IMG_2874.jpg"; // Intento con ruta relativa explícita
+                  } else if (target.dataset.triedLocal === "1") {
+                    target.dataset.triedLocal = "2";
+                    target.src = "https://images.unsplash.com/photo-1529900667825-0a8a1c3f0ad0?q=80&w=1200"; // Fallback final
                   }
                 }}
               />

@@ -1,0 +1,7 @@
+{
+  "name": "II Memorial Gonzalo Gómez - Torneo de Fútbol",
+  "description": "Sitio web informativo del II Memorial Gonzalo Gómez en el Oion ARENA. Información de categorías y descargas oficiales.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

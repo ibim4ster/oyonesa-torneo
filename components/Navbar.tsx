@@ -14,15 +14,7 @@ export const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-xl py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center gap-4">
-          <img 
-            src="./spash (1).png" 
-            alt="Logo SD Oyonesa" 
-            className="w-14 h-14 object-contain brightness-110 drop-shadow-[0_0_10px_rgba(255,255,255,0.2)]"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = "https://via.placeholder.com/100?text=Logo";
-            }}
-          />
+        <div className="flex items-center gap-2">
           <div className="flex flex-col">
             <span className="font-sport text-lg md:text-xl tracking-wider text-white leading-none">II MEMORIAL</span>
             <span className="font-sport text-xl md:text-2xl tracking-wider text-emerald-400 leading-none">GONZALO GÓMEZ</span>

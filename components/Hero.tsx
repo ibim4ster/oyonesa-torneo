@@ -4,12 +4,11 @@ import React from 'react';
 export const Hero: React.FC = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image - Local Reference to IMG_2874 */}
       <div 
-        className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-10000 hover:scale-110" 
-        style={{ backgroundImage: `url('./IMG_2874.jpg')` }}
+        className="absolute inset-0 z-0 bg-cover bg-center transition-transform duration-[20s] hover:scale-110" 
+        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=2000&auto=format&fit=crop')" }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/40 via-slate-900/70 to-slate-900"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-slate-900/80 to-slate-900"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10 text-center mt-12">
@@ -32,12 +31,11 @@ export const Hero: React.FC = () => {
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
           </a>
           <a href="#arena" className="px-10 py-5 bg-white/10 backdrop-blur-md text-white font-bold rounded-2xl hover:bg-white/20 transition-all border border-white/20 flex items-center justify-center">
-            VER EL OION ARENA
+            VER MÁS INFO
           </a>
         </div>
       </div>
       
-      {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-30">
         <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
       </div>

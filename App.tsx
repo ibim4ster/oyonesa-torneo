@@ -10,15 +10,7 @@ const Footer: React.FC = () => (
   <footer className="py-20 bg-slate-950 border-t border-slate-900">
     <div className="container mx-auto px-6 text-center">
       <div className="flex flex-col items-center mb-12">
-        <img 
-          src="./spash (1).png" 
-          alt="Escudo SD Oyonesa" 
-          className="w-24 h-24 object-contain mb-6 drop-shadow-[0_0_15px_rgba(16,185,129,0.2)]"
-          onError={(e) => {
-            (e.target as HTMLImageElement).src = "https://via.placeholder.com/100?text=Logo";
-          }}
-        />
-        <h2 className="font-sport text-3xl tracking-[0.2em] text-white uppercase">
+        <h2 className="font-sport text-4xl tracking-[0.2em] text-white uppercase">
           II Memorial <span className="text-emerald-400">Gonzalo Gómez</span>
         </h2>
         <div className="w-20 h-1 bg-emerald-500/30 mt-4 rounded-full"></div>
@@ -47,8 +39,8 @@ const Location: React.FC = () => (
     <div className="container mx-auto px-6">
       <div className="bg-slate-800 rounded-[2.5rem] overflow-hidden shadow-3xl border border-slate-700/50">
         <div className="grid md:grid-cols-3">
-          <div className="p-12 md:p-16 md:col-span-1 flex flex-col justify-center">
-            <h2 className="font-sport text-5xl mb-8 leading-none">¿DÓNDE <br /><span className="text-emerald-400 uppercase">ESTAMOS?</span></h2>
+          <div className="p-12 md:p-16 md:col-span-1 flex flex-col justify-center bg-slate-800 relative z-10">
+            <h2 className="font-sport text-5xl mb-8 leading-none text-white">¿DÓNDE <br /><span className="text-emerald-400 uppercase">ESTAMOS?</span></h2>
             <div className="space-y-8">
               <div>
                 <h4 className="text-emerald-500 font-black mb-2 uppercase text-[10px] tracking-[0.3em]">Instalaciones</h4>
@@ -65,24 +57,23 @@ const Location: React.FC = () => (
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-4 bg-emerald-500 hover:bg-emerald-600 text-white font-black px-10 py-5 rounded-2xl transition-all shadow-2xl shadow-emerald-500/20 active:scale-95 uppercase text-xs tracking-widest"
                 >
-                  Ruta en Mapa
+                  Cómo llegar
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                 </a>
               </div>
             </div>
           </div>
-          <div className="md:col-span-2 min-h-[500px] relative bg-slate-700">
-            <div className="absolute inset-0 grayscale-[0.3] flex items-center justify-center">
-               <img src="./IMG_2874.jpg" className="w-full h-full object-cover opacity-40 blur-[2px]" alt="Mapa conceptual" />
-               <div className="absolute inset-0 bg-gradient-to-r from-slate-800 via-transparent to-transparent"></div>
-               <div className="relative z-10 flex flex-col items-center">
-                  <div className="w-24 h-24 bg-emerald-500/20 rounded-full animate-ping absolute opacity-40"></div>
-                  <div className="w-20 h-20 bg-emerald-500 rounded-3xl flex items-center justify-center relative shadow-3xl shadow-emerald-500/50 rotate-3">
-                    <svg className="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd"></path></svg>
-                  </div>
-                  <p className="mt-6 text-white font-sport text-2xl tracking-widest bg-slate-900/80 backdrop-blur-md px-6 py-2 rounded-xl border border-white/10">OION ARENA</p>
-               </div>
-            </div>
+          <div className="md:col-span-2 min-h-[500px] relative">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2944.332309710356!2d-2.4364440234139884!3d42.50853507117974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd45873994644465%3A0xc3f982855f464d26!2sOion%20Arena!5e0!3m2!1ses!2ses!4v1716123456789!5m2!1ses!2ses" 
+              className="absolute inset-0 w-full h-full border-0 grayscale invert brightness-90 contrast-125"
+              allowFullScreen={true} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Mapa Oion Arena"
+            ></iframe>
+            {/* Overlay sutil para integrar el mapa con el estilo oscuro */}
+            <div className="absolute inset-0 pointer-events-none bg-emerald-500/5 mix-blend-overlay"></div>
           </div>
         </div>
       </div>

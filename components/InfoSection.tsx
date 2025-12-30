@@ -15,13 +15,15 @@ export const InfoSection: React.FC = () => {
                 className="w-full h-[500px] object-cover transition-transform duration-[3s] group-hover:scale-110"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  if (!target.dataset.triedOther) {
-                    target.dataset.triedOther = "true";
-                    // Intentamos variaciones comunes de nombre/extensión
-                    const alternatives = ["IMG_2874.JPG", "img_2874.jpg", "IMG_2874.png"];
-                    target.src = alternatives[0]; 
-                  } else {
-                    target.src = "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200";
+                  if (!target.dataset.step) {
+                    target.dataset.step = "1";
+                    target.src = "IMG_2874.jpg"; // Sin barra
+                  } else if (target.dataset.step === "1") {
+                    target.dataset.step = "2";
+                    target.src = "img_2874.jpg"; // Todo minúsculas
+                  } else if (target.dataset.step === "2") {
+                    target.dataset.step = "3";
+                    target.src = "https://images.unsplash.com/photo-1529900667825-0a8a1c3f0ad0?q=80&w=1200"; // Fallback futbolero
                   }
                 }}
               />
@@ -52,7 +54,7 @@ export const InfoSection: React.FC = () => {
               <span className="text-emerald-400 text-4xl md:text-5xl uppercase">PRIMER NIVEL</span>
             </h2>
             <p className="text-slate-400 mb-10 text-lg leading-relaxed font-light">
-              El Oion ARENA (Campo de El Espinar) no es solo un campo de fútbol; es el corazón de nuestra pasión. Ofrecemos una experiencia profesional para los jugadores y comodidad máxima para los aficionados.
+              El Oion ARENA (Campo de El Espinar) no es solo un campo de fútbol; es el corazón de nuestra pasión. Ofrece una experiencia profesional para los jugadores y comodidad máxima para los aficionados.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6">

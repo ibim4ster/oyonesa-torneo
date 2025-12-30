@@ -21,13 +21,13 @@ export const Navbar: React.FC = () => {
             className="w-12 h-12 md:w-14 md:h-14 object-contain"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
-              // Si falla con la barra, intentamos carga directa por nombre
-              if (!target.dataset.triedDirect) {
-                target.dataset.triedDirect = "true";
-                target.src = "oyonesa.png";
-              } else {
-                // Fallback final a placeholder si el archivo realmente no está
-                target.src = "https://via.placeholder.com/60/065f46/FFFFFF?text=SDO";
+              if (!target.dataset.tried) {
+                target.dataset.tried = "1";
+                target.src = "oyonesa.png"; // Intento 2: ruta relativa
+              } else if (target.dataset.tried === "1") {
+                target.dataset.tried = "2";
+                // Intento 3: URL oficial externa de la Oyonesa como respaldo real
+                target.src = "https://upload.wikimedia.org/wikipedia/en/2/23/SD_Oyonesa_logo.png";
               }
             }}
           />

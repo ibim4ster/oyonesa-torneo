@@ -10,9 +10,20 @@ export const InfoSection: React.FC = () => {
             <div className="absolute -inset-4 bg-emerald-500/20 rounded-3xl blur-3xl transition-all group-hover:bg-emerald-500/30"></div>
             <div className="relative rounded-[2.5rem] overflow-hidden border border-slate-700 shadow-2xl bg-slate-800">
               <img 
-                src="IMG_2874.jpg" 
+                src="/IMG_2874.jpg" 
                 alt="Instalaciones Oion ARENA" 
                 className="w-full h-[500px] object-cover transition-transform duration-[3s] group-hover:scale-110"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  if (!target.dataset.triedOther) {
+                    target.dataset.triedOther = "true";
+                    // Intentamos variaciones comunes de nombre/extensión
+                    const alternatives = ["IMG_2874.JPG", "img_2874.jpg", "IMG_2874.png"];
+                    target.src = alternatives[0]; 
+                  } else {
+                    target.src = "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200";
+                  }
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
               <div className="absolute bottom-10 left-10 right-10">

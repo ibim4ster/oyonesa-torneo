@@ -16,9 +16,20 @@ export const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-4">
           <img 
-            src="oyonesa.png" 
+            src="/oyonesa.png" 
             alt="Logo S.D. Oyonesa" 
             className="w-12 h-12 md:w-14 md:h-14 object-contain"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              // Si falla con la barra, intentamos carga directa por nombre
+              if (!target.dataset.triedDirect) {
+                target.dataset.triedDirect = "true";
+                target.src = "oyonesa.png";
+              } else {
+                // Fallback final a placeholder si el archivo realmente no está
+                target.src = "https://via.placeholder.com/60/065f46/FFFFFF?text=SDO";
+              }
+            }}
           />
           <div className="flex flex-col">
             <span className="font-sport text-lg md:text-xl tracking-wider text-white leading-none">II MEMORIAL</span>

@@ -14,7 +14,12 @@ export const Navbar: React.FC = () => {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-slate-900/95 backdrop-blur-sm shadow-xl py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-4">
+          <img 
+            src="https://images.unsplash.com/photo-1599305090598-fe179d501227?w=100&h=100&fit=crop&q=80" 
+            alt="Logo S.D. Oyonesa" 
+            className="w-10 h-10 md:w-12 md:h-12 object-contain brightness-0 invert"
+          />
           <div className="flex flex-col">
             <span className="font-sport text-lg md:text-xl tracking-wider text-white leading-none">II MEMORIAL</span>
             <span className="font-sport text-xl md:text-2xl tracking-wider text-emerald-400 leading-none">GONZALO GÓMEZ</span>

@@ -1,38 +1,8 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { CATEGORIES } from '../constants';
 
 export const Downloads: React.FC = () => {
-  const [downloading, setDownloading] = useState<string | null>(null);
-
-  const handleDownload = async (url: string, filename: string) => {
-    setDownloading(filename);
-    try {
-      // Método robusto: Descargar el archivo como blob para forzar la descarga del PDF "sí o sí"
-      const response = await fetch(url);
-      if (!response.ok) throw new Error('Error al acceder al archivo');
-      
-      const blob = await response.blob();
-      const blobUrl = window.URL.createObjectURL(blob);
-      
-      const link = document.createElement('a');
-      link.href = blobUrl;
-      link.setAttribute('download', filename);
-      document.body.appendChild(link);
-      link.click();
-      
-      // Limpieza
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(blobUrl);
-    } catch (error) {
-      console.error('Error en la descarga:', error);
-      // Fallback: abrir en nueva pestaña si el blob falla
-      window.open(url, '_blank');
-    } finally {
-      setDownloading(null);
-    }
-  };
-
   return (
     <section id="downloads" className="py-24 bg-slate-950 relative overflow-hidden">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -44,11 +14,11 @@ export const Downloads: React.FC = () => {
         </div>
         
         <h2 className="font-sport text-5xl md:text-6xl mb-6 tracking-wide text-white">
-          DESCARGA LOS <span className="text-emerald-400">HORARIOS</span>
+          CONSULTA LOS <span className="text-emerald-400">HORARIOS</span>
         </h2>
         
         <p className="text-slate-400 max-w-2xl mx-auto mb-16 text-lg">
-          Haz clic en el botón de tu categoría para obtener el PDF actualizado con los cruces, horarios y reglamento del torneo.
+          Haz clic en tu categoría para abrir el PDF oficial. Podrás consultarlo directamente o guardarlo en tu dispositivo.
         </p>
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -73,16 +43,17 @@ export const Downloads: React.FC = () => {
                 {cat.description}
               </p>
               
-              <button 
-                onClick={() => handleDownload(cat.pdfUrl, `${cat.year}.pdf`)}
-                disabled={downloading === `${cat.year}.pdf`}
-                className="w-full py-4 bg-emerald-500/10 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group/btn border border-emerald-500/20 disabled:opacity-50"
+              <a 
+                href={cat.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-4 bg-emerald-500/10 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group/btn border border-emerald-500/20"
               >
-                {downloading === `${cat.year}.pdf` ? 'DESCARGANDO...' : 'DESCARGAR'}
-                <svg className="w-5 h-5 group-hover/btn:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a2 2 0 002 2h12a2 2 0 002-2v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                VER HORARIOS
+                <svg className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
                 </svg>
-              </button>
+              </a>
             </div>
           ))}
         </div>

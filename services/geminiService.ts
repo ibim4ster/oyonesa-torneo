@@ -13,7 +13,7 @@ export class TournamentAssistant {
         Información clave:
         - Torneo: II Memorial Gonzalo Gómez.
         - Lugar: Instalaciones Oion ARENA, Oion, Álava (Campo de El Espinar).
-        - Categorías: Alevín 2012, Alevín 2013, Benjamín 2014, Benjamín 2015.
+        - Categorías: Benjamín 2014, Benjamín 2015, Prebenjamín 2016, Prebenjamín 2017.
         - Ambiente: Respeto, homenaje y alta competición base.
         - Servicios: Cafetería, vestuarios modernos, grada cubierta, parking cercano.
         Responde a la siguiente pregunta del usuario de forma amable, profesional y concisa: ${question}`,

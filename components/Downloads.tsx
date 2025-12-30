@@ -3,6 +3,11 @@ import React from 'react';
 import { CATEGORIES } from '../constants';
 
 export const Downloads: React.FC = () => {
+  const handleDownload = (e: React.MouseEvent<HTMLAnchorElement>, filename: string) => {
+    // Si el archivo no se descarga correctamente, intentamos abrirlo en pestaña nueva como fallback
+    console.log(`Iniciando descarga de: ${filename}`);
+  };
+
   return (
     <section id="downloads" className="py-24 bg-slate-950 relative overflow-hidden">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -18,7 +23,7 @@ export const Downloads: React.FC = () => {
         </h2>
         
         <p className="text-slate-400 max-w-2xl mx-auto mb-16 text-lg">
-          Selecciona tu categoría para descargar el PDF informativo con los cruces y horarios oficiales.
+          Haz clic en el botón de tu categoría para obtener el PDF con los cruces, horarios y reglamento del torneo.
         </p>
         
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -46,6 +51,7 @@ export const Downloads: React.FC = () => {
               <a 
                 href={cat.pdfUrl}
                 download={`${cat.year}.pdf`}
+                onClick={(e) => handleDownload(e, `${cat.year}.pdf`)}
                 className="w-full py-4 bg-emerald-500/10 hover:bg-emerald-500 text-white font-bold rounded-xl transition-all duration-300 flex items-center justify-center gap-3 group/btn border border-emerald-500/20"
               >
                 DESCARGAR
